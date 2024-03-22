@@ -16,12 +16,14 @@ function adicionarProduto(nome, precoUnitario, quantidade) {
 
    
     exibirCarrinho();
+    alert(`Produto "${nome}" adicionado ao carrinho.`);
 }
 
 // Função para remover um produto do carrinho
 function removerProduto(index) {
     carrinho.splice(index, 1); 
     exibirCarrinho();
+    alert(`Produto "${nomeProdutoRemovido}" removido do carrinho.`);
 }
 
 // Função para exibir os produtos no carrinho e calcular o valor total da compra

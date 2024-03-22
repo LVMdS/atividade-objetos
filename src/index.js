@@ -1,10 +1,9 @@
-const prompt = require('prompt-sync')();
 
 let carrinho = [];
 
 // Função para adicionar um produto ao carrinho
 function adicionarProduto(nome, precoUnitario, quantidade) {
-
+    
     let subtotal = precoUnitario * quantidade;
 
     // Adicionar o produto ao carrinho como um objeto
@@ -15,7 +14,7 @@ function adicionarProduto(nome, precoUnitario, quantidade) {
         subtotal: subtotal
     });
 
-
+   
     exibirCarrinho();
     alert(`Produto "${nome}" adicionado ao carrinho.`);
 }
@@ -23,8 +22,10 @@ function adicionarProduto(nome, precoUnitario, quantidade) {
 function removerProduto(index) {
     // Obter nome do produto a ser removido
     let nomeProdutoRemovido = carrinho[index].nome;
+
     carrinho.splice(index, 1);
     exibirCarrinho();
+
     alert(`Produto "${nomeProdutoRemovido}" removido do carrinho.`)
 }
 // Função para exibir os produtos no carrinho e calcular o valor total da compra
@@ -61,8 +62,8 @@ function exibirCarrinho() {
 }
 
 // Event listener para o formulário de adição de produtos
-document.getElementById("produtoForm").addEventListener("submit", function (event) {
-    event.preventDefault();
+document.getElementById("produtoForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
 
     let nome = document.getElementById("nome").value;
     let precoUnitario = parseFloat(document.getElementById("preco").value);
